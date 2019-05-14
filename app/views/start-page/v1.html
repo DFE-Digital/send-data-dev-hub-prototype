@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Developer Hub
+{% endblock %}
+
+{% block header %}
+    {% include "includes/header.html" %}
+    <div class="herospace govuk-!-padding-top-9 govuk-!-padding-bottom-6 govuk-!-margin-bottom-6">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">
+                    Developer Hub
+                  </h1>
+
+                <p class="govuk-!-font-size-24">Use this service to integrate with DfE systems. This service is currently being tested with users.</p>
+
+              </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    
+
+
+<!--
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l">Support</h2>
+          <p>This service is maintained by hustlers at DfE.  If you’ve got a question, idea or suggestion you can get in touch on <a class="govuk-link" href="https://ddatdataexchange.slack.com/messages/design">Slack</a> (<a href="slack://channel?team=xxx&id=xxx">Open in app</a>)</p>
+      </div>
+</div>
+-->
+<!--<hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />-->
+  <div class="govuk-body govuk-grid-row govuk-!-margin-bottom-9 startpage-hooks">
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-9">
+          <h2 class="govuk-heading-m">Get started</h2>
+          <a href="#">Using the Developer Hub</a>
+      </div>
+      
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-9">
+          <h2 class="govuk-heading-m">Explore APIs</h2>
+          <a href="/start-page/api">Open APIs</a>
+      </div>
+</div>
+
+{% endblock %}

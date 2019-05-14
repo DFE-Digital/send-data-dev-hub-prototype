@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% endblock %}
+
+{% block beforeContent %}
+    <div class="govuk-breadcrumbs">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="#">Section</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link">Subsection</a>
+        </li>
+      </ol>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Title & Description -->
+<!-- <header class="gem-c-inverse-header  gem-c-inverse-header--full-width "> -->
+
+      <!-- <div class="full-page-width-wrapper" style="background-color: 	#005ea5; margin-top: -30px; padding-top: 30px; width: 100%;"> -->
+
+            <!-- <span class="govuk-caption-m">Pro</span> -->
+            <h1 class="govuk-heading-xl">
+             API 1
+            </h1>
+
+            <div class="govuk-grid-row">
+
+
+                <div class="govuk-grid-column-two-thirds">
+
+                      <p class="" href="#">Information about what the API does</p>
+
+                      <button type="submit" class="govuk-button">
+                        Subscribe
+                      </button>
+
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+
+                    <h1 class="govuk-heading-m">
+                     Useful files
+                    </h1>
+                    <a class="govuk-link"  href="/product-details">
+                       Download swagger file
+                     </a>
+                </div>
+
+          </div>
+
+                    <!-- <div class="govuk-!-padding-bottom-5"></div> -->
+
+          <!-- <h1 class="govuk-heading-m">
+           Useful files
+          </h1>
+          <a class="govuk-link"  href="/product-details">
+             Download swagger file
+           </a> -->
+
+          <div class="govuk-!-padding-bottom-8"></div>
+
+<!---------------------------------------------- Tabs ------------------------------------------------------------->
+
+          <div class="govuk-tabs" data-module="tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#past-day">
+        How to intergrate
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Version history
+      </a>
+    </li>
+  </ul>
+
+  <section class="govuk-tabs__panel" id="past-day">
+    <h2 class="govuk-heading-l">How to intergrate</h2>
+    <!-- <h1 class="govuk-heading-l">
+     How to intergrate this API
+    </h1> -->
+
+    <p class="" href="#">
+      Text telling users how to intergrate the API
+    </p>
+
+<div class="govuk-!-padding-bottom-6"></div>
+
+    <h1 class="govuk-heading-m">
+     Technical specifications
+    </h1>
+
+    <p class="" href="#">
+      Text telling users how to intergrate the API
+    </p>
+
+      <!-- <a class="govuk-link"  href="/product-details">
+         Download swagger file
+       </a> -->
+
+  </section>
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-l">Version history</h2>
+    <div class="govuk-!-padding-bottom-1"></div>
+
+              <hr class="govuk-section-break govuk-section-break--visible">
+    <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-one-half">
+            <div class="govuk-!-padding-bottom-4"></div>
+            <h4 class="govuk-heading-s">
+              v1
+            </h4>
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+            <div class="govuk-!-padding-bottom-4"></div>
+
+            <a  href="/product-details" style="float:right;"> View details</a>
+          </div>
+
+
+    </div>
+    <hr class="govuk-section-break govuk-section-break--visible">
+    <div class="govuk-!-padding-bottom-6"></div>
+
+  </section>
+
+</div>
+          <div class="govuk-!-padding-bottom-5"></div>
+          <!-- <hr class="govuk-section-break govuk-section-break--visible"> -->
+
+<!-- How to  -->
+
+    <!-- </div>
+
+  <header class="gem-c-inverse-header  gem-c-inverse-header--full-width "> -->
+
+  <!-- <hr class="govuk-section-break govuk-section-break--visible"> -->
+      <!-- <div class="govuk-!-padding-bottom-4"></div> -->
+<!-- Available API's ----------------------------------------------------------->
+
+
+{% endblock %}

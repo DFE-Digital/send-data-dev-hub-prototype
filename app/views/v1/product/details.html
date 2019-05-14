@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Developer hub homepage
+{% endblock %}
+
+{% block header %}
+    {% include "includes/header-logged-in.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% if hideBackButton === true %}
+{% else %}
+    <a href="/{{ version }}/product/manage" class="govuk-back-link">Back</a>
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<h1 class="govuk-heading-xl govuk-!-width-two-thirds">{{ productName }}</h1>
+
+<div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-one-third">
+        Client ID
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-font-weight-bold">
+        {{ productDetails.client_id }}
+        <a class="block govuk-!-font-size-16 govuk-!-font-weight-regular" href="#">Copy client ID</a>
+    </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="govuk-grid-row govuk-body" id="client_secret">
+    <div class="govuk-grid-column-one-third">
+        Client secret
+        <span class="govuk-hint govuk-!-font-size-16">This must be kept confidential.</span>
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-font-weight-bold show-hide-content">
+        <a class="govuk-link govuk-!-font-weight-regular show-key" href="/get-key/{{ productName }}" data-type="client secret">Show client secret</a>
+    </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-one-third">
+        Redirect URL
+        <span class="govuk-hint govuk-!-font-size-16">Redirects user back to the application with an authorisation code.</span>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <span class="block govuk-!-font-size-19 govuk-!-font-weight-bold">{{ productDetails.redirect_url }}</span>
+        <a class="govuk-!-font-size-16 govuk-!-font-weight-regular" href="#">Change redirect URL</a>
+    </div>
+</div>
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-one-third">
+        Reset client secret
+        <span class="govuk-hint govuk-!-font-size-16">Any app that uses the client secret key will stop working immediately.</span>
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-2">
+        <a class="non-cta-button govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state" href="/{{ version }}/product/reset-client-secret/{{ productName }}">Reset client secret</a>
+    </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-one-third">
+        Delete product
+        <span class="govuk-hint govuk-!-font-size-16">This action is irreversible.</span>
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-2">
+        <a class="non-cta-button non-cta-button--danger govuk-!-font-weight-bold govuk-link govuk-link--no-visited-state" href="#">Delete {{ productName }}</a>
+    </div>
+</div>
+    <!--
+    <div class="govuk-grid-column-full govuk-body govuk-!-margin-top-2">
+        Swagger file <a class="govuk-!-font-size-16" href="#">Download</a>
+        
+    
+
+<pre class="govuk-!-margin-top-2">
+<a href="#" class="copy-button govuk-!-font-size-14">Copy</a>
+<a href="#" class="expand-button govuk-!-font-size-14">Expand</a>
+</pre>
+     
+-->
+{% if hideBackButton === true %}
+<hr class="govuk-section-break govuk-section-break--xl ">
+<a class="govuk-link" href="/{{ version }}/product/manage">Go back to the dashboard</a>
+{% endif %}
+
+{% endblock %}

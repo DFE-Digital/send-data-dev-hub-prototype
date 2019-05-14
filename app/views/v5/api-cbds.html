@@ -1,0 +1,123 @@
+  
+       <h3 id="census-validation-api-v1" class="govuk-heading-m">Common basic data set v1.0 <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 govuk-!-font-weight-regular govuk-!-padding-left-2" href="#">Download swagger file</a></h3>
+        <span class="block govuk-!-margin-bottom-4">Returns definitions for common data items that schools and local authorities use in certain software systems, for example school management information systems.</span>
+        <p>
+            <span class="badge gov-orange-bg govuk-!-font-size-16">POST</span>  <span>/api/common-basic-data-set</span>
+        </p>
+
+        <div class="govuk-!-margin-bottom-6"> 
+        <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-2">Parameters</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#CBDSIdentifier">CBDSIdentifier</a> (String) <span class="govuk-hint">Data item name</span></li>
+            </ul>  
+        
+            
+<!--
+            
+            <table class="govuk-table">
+                <tr class="govuk-table__row">
+                    <td width="40%" class="govuk-table__cell v-align-top">CBDSIdentifier (String)<span class="govuk-hint">Data item name</span></td>
+                    <td class="govuk-table__cell">
+                        N00015
+                        <span class="govuk-hint">Language code</span>
+                        
+                        N00026
+                        <span class="govuk-hint">Exclusion category</span>
+
+                        N00027
+                        <span class="govuk-hint">Exclusion reason</span>
+
+                        N00166
+                        <span class="govuk-hint">Pupil SEN type code</span>
+
+                        N00177
+                        <span class="govuk-hint">Child ethnicity</span>
+
+                        N00209
+                        <span class="govuk-hint">SEN provision</span>
+                    </td>
+                </tr>
+            </table> 
+-->
+        </div>
+
+<!--
+
+
+        <p>
+            <span class="block govuk-!-font-weight-bold">Scope</span>
+            <span>Census</span>
+        </p>
+-->
+
+        
+        <div class="govuk-!-margin-bottom-6">
+        <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-2">Example body</p>
+<pre>
+{
+    "CBDSIdentifier": "N00015"
+}
+</pre>
+        </div> 
+
+        <div class="govuk-!-margin-bottom-6">
+        <p id="CBDSIdentifier" class="block govuk-!-font-weight-bold govuk-!-margin-bottom-2">CBDS Identifiers</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    N00015 - Language code
+                </li>
+                <li>
+                    N00026 - Exclusion category
+                </li>
+                <li>
+                    N00027 - Exclusion reason
+                </li>
+                <li>
+                    N00166 - Pupil SEN type code
+                </li>
+                <li>
+                    N00177 - Child ethnicity
+                </li>
+                <li>
+                    N00209 - SEN provision
+                </li>
+                
+            </ul>
+        </div>
+
+        
+        <div class="govuk-!-margin-bottom-6">
+        <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-2">Example response</p>
+<pre>
+"language: {
+    ACL: Acholi,
+    ADA: Adangme,
+    AFA: Afar-Saho,
+    AFK: Afrikaans,
+    AKA: Akan/Twi-Fante,
+    AKAF: Akan (Fante),
+    AKAT: Akan (Twi/Asante),
+    ALB: Albanian/Shqip,
+    ALU: Alur,
+    AMR: Amharic,
+    ...
+    ZUL: Zulu
+}
+"200": {
+    "description": "Success"
+}
+</pre>
+        </div>
+        <div class="govuk-!-margin-bottom-6">
+
+        <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+            Response codes
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>200 - Success</li>    
+            <li>400 - Bad Request</li>    
+            <li>401 - Unauthorized</li>    
+            <li>403 - Forbidden</li>    
+            <li>500 - Server Error</li>    
+        </ul>  
+        </div>

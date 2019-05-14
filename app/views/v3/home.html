@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Developer hub homepage
+{% endblock %}
+
+{% block header %}
+    {% include "includes/header-logged-in-v3.html" %}
+{% endblock %}
+
+
+{% block content %}
+{% if (products | length) == 0 %}
+
+  <h1 class="govuk-heading-l govuk-!-width-two-thirds">
+    You don't have any products registered with this service
+  </h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a class="govuk-button govuk-button--start" href="/{{ version }}/register">Register MIS product</a>
+    </div>
+  </div>
+
+{% else %}
+
+  <h1 class="govuk-heading-l govuk-!-width-two-thirds">
+    Registered products ({{ products | length }})
+  </h1>
+
+  <div class="govuk-grid-row">
+  {% for name, product in products %} 
+    <div class="govuk-grid-column-one-third">
+        <a href="/{{ version }}/details/{{ name }}" class="govuk-link govuk-link--no-visited-state card-view card-view-product govuk-body govuk-!-font-size-27 govuk-!-font-weight-bold">
+            <span>{{ name }}</span>
+            <span class="govuk-hint govuk-!-font-size-14">Created {{ product.created }}</span>
+        </a>
+    </div>
+  {% endfor %}
+      
+    <div class="govuk-grid-column-one-third">
+        <a href="/{{ version }}/register" class="govuk-link govuk-link--no-visited-state card-view card-view-new govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">
+<!--            <span class="icon">+</span>-->
+            <span>Register another product</span>
+        </a>
+    </div>
+ </div>
+{% endif %}
+            <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+
+    <h2 class="govuk-heading-l">Services</h2>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            <strong class="block">Send data to DfE</strong>
+            <span>5f7f411234a44a68a2ea71062d271a59</span>
+            <a class="block govuk-!-font-size-16 govuk-!-font-weight-regular" href="#">Copy API key</a>
+        </li>
+    </ul>
+            
+    <hr id="apis-section-start" class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+
+<h2 class="govuk-heading-l">APIs</h2>
+{% include api_file %}
+
+
+{% endblock %}

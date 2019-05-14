@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Registered products: 2
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        There are 2 registered products
+      </h1>
+        
+      <ol class="govuk-list govuk-list--bullet">
+        <li><a class="gov-link" href="#">Product 1</a></li>
+        <li><a class="gov-link" href="#">Product 2</a></li>
+      </ol>
+
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+        <a href="#">Register new product</a>  
+    </div>
+</div>
+
+{% endblock %}

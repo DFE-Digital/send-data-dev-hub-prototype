@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Register as a software supplier
+{% endblock %}
+
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Register as a software supplier
+      </h1>
+
+      <form method="post" action="register">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="name">Your name</label>
+            <input type="text" class="govuk-input govuk-input--width-20" id="name" name="name" />
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="organisation">Organisation</label>
+            <input type="text" class="govuk-input govuk-input--width-20" id="organisation" name="organisation" />
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="email">Email address</label>
+            <input type="text" class="govuk-input govuk-input--width-20" id="email" name="email" />
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="password">Create password</label>
+            <span class="govuk-hint">
+                Your password must be at least 12 characters and contain at least one number, lowercase letter, uppercase letter and special character  
+            </span>
+            <input type="text" class="govuk-input govuk-input--width-20" id="password" name="password" />
+          </div>
+          
+          <input type="submit" value="Register" class="govuk-button" />
+      </form>
+    </div>
+
+
+  </div>
+{% endblock %}

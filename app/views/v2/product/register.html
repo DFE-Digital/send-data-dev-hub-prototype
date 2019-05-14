@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Developer hub homepage
+{% endblock %}
+
+{% block header %}
+    {% include "includes/header-logged-in.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+    <a href="/{{ version }}/product/manage" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+{% if showError %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#product-name-error">Product name is not in the right format</a>
+      </li>
+      <li>
+        <a href="#url-error">The url is not in the right format</a>
+      </li>
+      <li>
+        <a href="#email-error">The email address is not in the right format</a>
+      </li>
+      <li>
+        <a href="#tnc-error">You have not agreed to the terms and conditions</a>
+      </li>
+    </ul>
+  </div>
+</div>
+{% endif %}
+
+<h1 class="govuk-heading-xl govuk-!-width-two-thirds">Register MIS product</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group {% if showError %}govuk-form-group--error{% endif %}">
+                <label class="govuk-label" for="productName">Enter product name</label>
+                <span class="govuk-hint">A friendly name made up of a maximum of 12 alphanumeric characters. Spaces and special characters are not allowed.</span>
+                {% if showError %}
+                <span id="product-name-error" class="govuk-error-message">
+                  Use letters and numbers only
+                </span>
+                {% endif %}
+                <input maxlength="12" id="productName" name="productName" type="text" class="govuk-input govuk-input--width-20 {% if showError %}govuk-input--error{% endif %}" />
+            </div>
+            
+            <div class="govuk-form-group {% if showError %}govuk-form-group--error{% endif %}">
+                <label class="govuk-label" for="redirectURL">Enter redirect URL</label>
+                <span class="govuk-hint">Redirects user back to the application with an authorisation code.</span>
+                {% if showError %}
+                <span id="url-error" class="govuk-error-message">
+                  Enter a valid URL
+                </span>
+                {% endif %}
+                <input id="redirectURL" name="redirectURL" type="text" class="govuk-input govuk-input--width-20 {% if showError %}govuk-input--error{% endif %}" value="https://" />
+            </div>
+            
+            <div class="govuk-form-group {% if showError %}govuk-form-group--error{% endif %}">
+                <label class="govuk-label" for="email">Enter email</label>
+                <span class="govuk-hint">This is where we will send you product information.</span>
+                {% if showError %}
+                <span id="email-error" class="govuk-error-message">
+                  Enter a valid email address
+                </span>
+                {% endif %}
+                <input id="email" name="email" type="text" class="govuk-input govuk-input--width-20 {% if showError %}govuk-input--error{% endif %}" value="{{ email }}" />
+            </div>
+            
+            <hr  class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+            
+            <div class="govuk-form-group {% if showError %}govuk-form-group--error{% endif %}">
+                {% if showError %}
+                <span id="url-error" class="govuk-error-message">
+                  Click on the box to agree to the terms and conditions
+                </span>
+                {% endif %}
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tandc" name="tandc" type="checkbox" value="tandc">
+                    <label class="govuk-label govuk-checkboxes__label" for="tandc">
+                      I understand and agree to the <a target="_blank" href="tnc">terms and conditions</a>.
+                    </label>
+                </div>
+            </div>
+
+            <hr  class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+
+            <input type="submit" class="govuk-button" value="Register product" />
+        </form>
+    </div>
+  </div>
+{% endblock %}

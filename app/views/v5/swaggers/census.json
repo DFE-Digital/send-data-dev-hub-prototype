@@ -1,0 +1,91 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "v1",
+		"title": "Census Validation API"
+	},
+	"paths": {
+		"/api/Census": {
+			"post": {
+				"tags": ["Census"],
+				"summary": "Receives the census XML file from the Data Provider,\r\nvalidates and returns a validation report showing the errors and queries.\r\nThis will over-write any previous census data and supplementary\r\ninformation such as notes.",
+				"operationId": "ApiCensusPost",
+				"consumes": ["application/form-data"],
+				"produces": ["application/json"],
+				"parameters": [{
+					"name": "censusfile",
+					"in": "formData",
+					"description": "Upload file.",
+					"required": true,
+					"type": "file"
+				}],
+				"responses": {
+					"200": {
+						"description": "Success",
+						"schema": {
+							"$ref": "#/definitions/ValidationResponse"
+						}
+					},
+					"400": {
+						"description": "Bad Request"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"500": {
+						"description": "Server Error"
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"IFormFile": {
+			"type": "object",
+			"properties": {
+				"contentType": {
+					"type": "string",
+					"readOnly": true
+				},
+				"contentDisposition": {
+					"type": "string",
+					"readOnly": true
+				},
+				"headers": {
+					"type": "object",
+					"additionalProperties": {
+						"uniqueItems": false,
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"readOnly": true
+				},
+				"length": {
+					"format": "int64",
+					"type": "integer",
+					"readOnly": true
+				},
+				"name": {
+					"type": "string",
+					"readOnly": true
+				},
+				"fileName": {
+					"type": "string",
+					"readOnly": true
+				}
+			}
+		},
+		"ValidationResponse": {
+			"description": "ValidationResponse class returns validation results",
+			"type": "object",
+			"properties": {
+				
+			}
+		}
+	}
+}

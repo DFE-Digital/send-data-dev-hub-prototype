@@ -1,0 +1,81 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  User journeys and prototypes
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        User journeys and prototypes
+      </h1>
+        
+        <h2 class="govuk-heading-l"><a href="/start-page/v1">Start page</a></h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>DH start page - story #4836</li>
+        </ul>
+        
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+        
+      <h2 class="govuk-heading-l"><a href="/v5/sign-in">v5</a></h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Content amendments</li>
+            <li>Interaction amendments</li>
+        </ul>
+        
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+      <h2 class="govuk-heading-l"><a href="/v4/sign-in">v4</a></h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>API is now under 'API documentation' in the site's main navigation</li>
+            <li>Dashboard renamed to 'Registered products'</li>
+            <li>Behaviour: the URL should be truncated where necessary when displaying in the product page</li>
+            <li>Behaviour: pluralise the title when more than 1 URL  (product page)</li>
+            <li>Behaviour: when more than 1 URL to display (product page), make the bullets visible</li>
+            <li>Updated: sign-in page has been updated to DfE Sign-in</li>
+        </ul>
+        
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+
+      <h2 class="govuk-heading-l"><a href="/v3/sign-in">v3</a></h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Removed 'Available APIs' heading from the dashboard page</li>
+            <li>Added example APIm products on left hand side</li>
+            <li>Added index/table of content for APIm product   </li>
+            <li>API (subscription) key now sits outside the APIm product</li>
+            <li>Added ability to add multiple redirect URLs</li>
+            <li>Removed authentication from the reset secret journey</li>
+            <li>Updated product details page - added new section called 'Product setting'</li>
+            <li>Updated phase banner to Private Beta</li>
+            <li>Changed the the title of the service to 'Send data to DfE' to be in-line with other services</li>
+            <li>Updates to the dashboard including section titles</li>
+            <li>Behaviour: anchoring in api only needs to show if there is more than 1 API</li>
+
+        </ul>
+        
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+      <h2 class="govuk-heading-l"><a href="/v2/sign-in">v2</a></h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Email input added to the product registration page</li>
+            <li>Updated journey to display one-off client secret</li>
+            <li>Removed secret key from the product detail page</li>
+            <li>Removed the option to delete product</li>
+            <li>Overhauled API documentation</li>
+        </ul>
+        
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+      <h2 class="govuk-heading-l"><a href="/v1/sign-in">v1</a></h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Initial journey for first round of testing on 16 Oct '18</li>
+        </ul>
+
+    </div>
+</div>
+
+{% endblock %}

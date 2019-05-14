@@ -1,0 +1,63 @@
+<div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-one-quarter">
+        <ul class="govuk-list manage-apim">
+            <li><a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16" href="/{{version}}/home#apis-section-start">School census API<span class="govuk-hint govuk-!-font-size-16 govuk-!-margin-bottom-0">Ver 1.0</span></a></li>
+            <li><a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16" href="#apis-section-start">School workforce API<span class="govuk-hint govuk-!-font-size-16 govuk-!-margin-bottom-0">Ver 1.0</span></a></li>
+            <li><a class="govuk-link govuk-link--no-visited-state selected govuk-!-font-size-16 govuk-!-font-weight-bold" href="#apis-section-start">Controlled list<span class="govuk-hint govuk-!-font-size-16 govuk-!-margin-bottom-0">Ver 1.0</span></a></li>
+        </ul>
+    </div>
+    <div class="govuk-grid-column-three-quarters">   
+
+<!--
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-9">
+            <li><a href="#census-validation-api-v1">Common data set API v1</a></li>
+        </ul>
+-->
+
+
+        <h3 id="census-validation-api-v1" class="govuk-heading-m govuk-!-margin-bottom-0">Common data set API v1 <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 govuk-!-font-weight-regular govuk-!-padding-left-2" href="#">View swagger file</a></h3>
+        <span class="block govuk-!-margin-bottom-4">Returns data set with valid values that are used when making API calls.</span>
+        <p>
+            <span class="badge gov-light-purple-bg govuk-!-font-size-16">GET</span>  <span>/api/Common-DataSet</span>
+        </p>
+
+
+        <p>
+            <span class="block govuk-!-font-weight-bold">Returns</span>
+            <span>JSON object</span>
+        </p>
+
+
+
+        <p>
+            <span class="block govuk-!-font-weight-bold">Scope</span>
+            <span>Controlled list</span>
+        </p>
+
+        <div class="govuk-!-margin-bottom-4">
+        <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-0">Example response</p>
+            <pre>
+"200": {
+"description": "Success"
+}
+</pre>
+
+        <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-0">
+            Response codes
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>200 - Success</li>    
+            <li>400 - Bad Request</li>    
+            <li>401 - Unauthorized</li>    
+            <li>403 - Forbidden</li>    
+            <li>500 - Server Error</li>    
+        </ul>  
+        </div>
+
+        
+            
+    </div>
+
+
+
+</div>

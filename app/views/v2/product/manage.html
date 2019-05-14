@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Developer hub homepage
+{% endblock %}
+
+{% block header %}
+    {% include "includes/header-logged-in.html" %}
+{% endblock %}
+
+
+{% block content %}
+{% if (products | length) == 0 %}
+
+  <h1 class="govuk-heading-l govuk-!-width-two-thirds">
+    You don't have any products registered with this service
+  </h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a class="govuk-button govuk-button--start" href="/{{ version }}/product/register">Register MIS product</a>
+    </div>
+  </div>
+
+{% else %}
+
+  <h1 class="govuk-heading-l govuk-!-width-two-thirds">
+    Registered products ({{ products | length }})
+  </h1>
+
+  <div class="govuk-grid-row">
+  {% for name, product in products %} 
+    <div class="govuk-grid-column-one-third">
+        <a href="/{{ version }}/product/details/{{ name }}" class="govuk-link govuk-link--no-visited-state card-view card-view-product govuk-body govuk-!-font-size-27 govuk-!-font-weight-bold">
+            <span>{{ name }}</span>
+            <span class="govuk-hint govuk-!-font-size-14">Created {{ product.created }}</span>
+        </a>
+    </div>
+  {% endfor %}
+      
+    <div class="govuk-grid-column-one-third">
+        <a href="/{{ version }}/product/register" class="govuk-link govuk-link--no-visited-state card-view card-view-new govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">
+<!--            <span class="icon">+</span>-->
+            <span>Register another product</span>
+        </a>
+    </div>
+ </div>
+{% endif %}
+            <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+<h1 class="govuk-heading-l govuk-!-width-two-thirds govuk-!-margin-top-9">Available APIs</h1>
+    <div class="govuk-grid-row govuk-body">
+        <div class="govuk-grid-column-one-quarter">
+            <ul class="govuk-list manage-apim">
+                <li><a class="govuk-link govuk-link--no-visited-state selected govuk-!-font-size-16 govuk-!-font-weight-bold" href="#">Census API<span class="govuk-hint govuk-!-font-size-16 govuk-!-margin-bottom-0">Ver 1.0</span></a></li>
+            </ul>
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+            
+            <div class="l-align govuk-!-padding-top-1 govuk-!-padding-bottom-5 govuk-!-font-weight-bold show-hide-content">
+                <a  class="govuk-link govuk-!-font-weight-regular show-key" href="/get-key/api" data-type="API key">Show census API key</a>
+<!--
+                <span>Census API key</span>
+                <span class="block govuk-!-font-weight-bold">5f7f411234a44a68a2ea71062d271a59</span>
+-->
+            </div>
+<!--            98cf2f23221a4e123bca922adcf3f8de -->
+
+            
+            <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--s" />
+            
+            <h3 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-0">Census Validation API v1 <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 govuk-!-font-weight-regular govuk-!-padding-left-2" href="#">View swagger file</a></h3>
+            <span class="block govuk-!-margin-bottom-4">Receives the census XML file from the Data Provider, validates and returns a validation report showing the errors and queries. This will over-write any previous census data and supplementary information such as notes.</span>
+            <p>
+                <span class="badge gov-orange-bg govuk-!-font-size-16">POST</span>  <span>/api/Census</span>
+            </p>
+            <p>
+                <span class="block govuk-!-font-weight-bold">Returns</span>
+                <span>JSON object</span>
+            </p>
+            <div class="govuk-!-margin-bottom-6">
+            <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-0">Paramters</p>
+                <pre>
+<strong>censusfile</strong> 
+File | Required | Upload file.
+</pre>
+            </div>
+            
+            <div class="govuk-!-margin-bottom-4">
+            <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-0">Example response</p>
+                <pre>
+"200": {
+    "description": "Success"
+}
+</pre>
+
+            <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-0">
+                Response codes
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>200 - Success</li>    
+                <li>400 - Bad Request</li>    
+                <li>401 - Unauthorized</li>    
+                <li>403 - Forbidden</li>    
+                <li>500 - Server Error</li>    
+            </ul>  
+            </div>
+        </div>
+        
+    </div>
+
+    
+
+{% endblock %}

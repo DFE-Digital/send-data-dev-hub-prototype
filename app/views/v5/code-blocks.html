@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Code blocks
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl">Code blocks</h1>
+                
+                <h3 class="govuk-heading-m">Example</h3>
+                {{ govukInsetText({
+                    html: '<code><strong>GET</strong> https://design-system.service.gov.uk/get-started/production?<span class="app-code-highlight">this_parameter</span>={TESTING}&<span class="app-code-highlight">that_parameter</span>={TESTING}&<span class="app-code-highlight">something_else</span>={TESTING}&<span class="app-code-highlight">another_thing</span>={TESTING}&<span class="app-code-highlight">last_thing</span>={TESTING}</code>'
+                }) }}
+
+                <h3 class="govuk-heading-m">HTML</h3>
+<code>
+    <pre>
+
+&lt;div class=&quot;govuk-inset-text&quot;&gt;
+  &lt;code&gt;
+    &lt;strong&gt;GET&lt;/strong&gt; https://design-system.service.gov.uk/get-started/production?&lt;span class=&quot;app-code-highlight&quot;&gt;this_parameter&lt;/span&gt;={TESTING}&&lt;span class=&quot;app-code-highlight&quot;&gt;that_parameter&lt;/span&gt;={TESTING}&&lt;span class=&quot;app-code-highlight&quot;&gt;something_else&lt;/span&gt;={TESTING}&&lt;span class=&quot;app-code-highlight&quot;&gt;another_thing&lt;/span&gt;={TESTING}&&lt;span class=&quot;app-code-highlight&quot;&gt;last_thing&lt;/span&gt;={TESTING}
+  &lt;/code&gt;
+&lt;/div&gt;
+    </pre>
+</code>
+
+                <h3 class="govuk-heading-m">Styles</h3>
+                <code>
+                <pre>
+                    
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+code, pre {
+    white-space: pre-wrap;
+}
+.govuk-inset-text code {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+}
+.govuk-inset-text code span.app-code-highlight {
+    font-weight: 700;
+    background-color: rgba(0, 141, 201, 0.2);
+    border-radius: 3px;
+}
+    </pre>
+                </code>
+
+        </div>
+
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+code, pre {
+    white-space: pre-wrap;
+}
+.govuk-inset-text code {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+}
+.govuk-inset-text code span.app-code-highlight {
+    font-weight: 700;
+    background-color: rgba(0, 141, 201, 0.2);
+    border-radius: 3px;
+}
+</style> 
+
+{% endblock %}

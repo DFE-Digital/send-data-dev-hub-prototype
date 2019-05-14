@@ -1,0 +1,64 @@
+<h3 id="census-validation-api-v1" class="govuk-heading-m">School census API v1.0 <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 govuk-!-font-weight-regular govuk-!-padding-left-2" href="#">Download swagger file</a></h3>
+        <span class="block govuk-!-margin-bottom-4">Receives the census XML file from the Data Provider, validates and returns a validation report showing the errors and queries. This will over-write any previous census data and supplementary information such as notes.</span>
+        <p>
+            <span class="badge gov-orange-bg govuk-!-font-size-16">POST</span>  <span>/api/Census</span>
+        </p>
+
+        <div class="govuk-!-margin-bottom-6"> 
+        <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-2">Parameters</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>census_file (File) <span class="govuk-hint">XML file</span></li>
+                <li>submit_census (Boolean) : true | false <span class="govuk-hint">Validates census when 'false'</span></li>
+            </ul>   
+        </div>
+
+<!--
+
+
+        <p>
+            <span class="block govuk-!-font-weight-bold">Scope</span>
+            <span>Census</span>
+        </p>
+-->
+        <div class="govuk-!-margin-bottom-4">
+        <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-2">Headers</p>
+<pre>
+Content-Type: application/json
+Authorization: Bearer <em>[access token]</em>
+X-API-Key: <a  class="show-hide-content govuk-link govuk-!-font-size-14 show-key" href="/get-key/api" data-type="API key">Show school census API key</a>
+</pre>
+        </div>
+        
+        <div class="govuk-!-margin-bottom-4">
+        <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-2">Example body</p>
+<pre>
+{
+    "census_file": "st_mary_aut_2018.xml"
+    "submit": "false"
+}
+</pre>
+        </div>        
+        
+
+        
+        <div class="govuk-!-margin-bottom-4">
+        <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-2">Example response</p>
+<pre>
+"200": {
+    "description": "Success"
+}
+</pre>
+        </div>
+        <div class="govuk-!-margin-bottom-4">
+
+        <p class="block govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+            Response codes
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>200 - Success</li>    
+            <li>400 - Bad Request</li>    
+            <li>401 - Unauthorized</li>    
+            <li>403 - Forbidden</li>    
+            <li>500 - Server Error</li>    
+        </ul>  
+        </div>

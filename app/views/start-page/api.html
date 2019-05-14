@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Developer Hub
+{% endblock %}
+
+{% block header %}
+    {% include "includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+    <a href="/start-page/v1" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+<h1 class="govuk-heading-xl">Open APIs</h1>
+
+
+<div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-one-quarter">
+
+        
+        <h2 class="govuk-heading-s">Controlled list</h2>
+        <ul class="govuk-list manage-apim manage-apim--v4">
+            <li><a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16 selected" href="api">Common basic data set<span class="govuk-hint govuk-!-font-size-16 govuk-!-margin-bottom-0">v1.0</span></a></li>
+            
+            <li><a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-16" href="#">Notepad entries API<span class="govuk-hint govuk-!-font-size-16 govuk-!-margin-bottom-0">v1.0</span></a></li>
+        </ul>
+        
+
+
+    </div>
+    
+    <div class="govuk-grid-column-three-quarters">  
+        {% include "v4/api-cbds.html" %}
+    </div>
+
+</div>
+
+
+{% endblock %}
